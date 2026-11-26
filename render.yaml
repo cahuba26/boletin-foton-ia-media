@@ -1,0 +1,11 @@
+# Sitio estático que solo sirve las imágenes y el video del Boletín Fotón-IA.
+services:
+  - type: web
+    name: boletin-foton-ia-media
+    runtime: static
+    buildCommand: echo "Solo medios"
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=86400
